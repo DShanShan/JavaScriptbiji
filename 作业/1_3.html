@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<script>
+			// 1.求100以内所有能被3和7整除的数的和
+			var sum1 = 0;
+			for (var i = 1; i <= 100; i++) {
+				if (i % 3 == 0 && i % 7 == 0) {
+					sum1 += i;
+				}
+			}
+			console.log("100以内所有能被3和7整除的数的和" + sum1);
+
+			//2.使用for循环打印图形
+			for (var i = 1; i <= 5; i++) {
+				for (var j = 1; j <= i; j++) {
+					if (j == i) {
+						document.write("o");
+					} else {
+						document.write("*");
+					}
+				}
+				for (var k = 8; k >= 2 * i - 1; k--) {
+					document.write("*");
+				}
+				for (var j = 5; j >= i; j--) {
+					if (j == i) {
+						document.write("o");
+					}
+				}
+				for (var j = 1; j <= i - 1; j++) {
+					document.write("*");
+				}
+				document.write("<br>");
+			}
+			for (var i = 1; i <= 5; i++) {
+				for (var j = 5; j >= i; j--) {
+					if (j == i) {
+						document.write("o");
+					} else {
+						document.write("*");
+					}
+				}
+				for (var k = 2; k <= 2 * i - 1; k++) {
+					document.write("*");
+				}
+				for (var j = 1; j <= i; j++) {
+					if (j == i) {
+						document.write("o");
+					}
+				}
+				for (var j = 4; j >= i; j--) {
+					document.write("*");
+				}
+				document.write("<br>");
+			}
+            document.write("<br>");
+
+			for(var i=1;i<=10;i++){//控制行数
+			    for (var j=1;j<=10;j++){//控制每行的个数
+			        if(i===j || i+j===11){//如果行数等于个数或者行数加个数===11，就输出o
+		            document.write("★");
+                    }else {//否则就输出*
+			            document.write("☆");
+                    }
+                }
+                //换行
+                document.write("<br>");
+            }
+
+
+
+			// 3. 使用for循环打印99乘法表
+			document.write("<br>");
+			document.write("打印99乘法表");
+			document.write("<br>");
+			for (var i = 1; i <= 9; i++) {
+				for (var j = 1; j <= i; j++) {
+					document.write(j + "×" + i + "=" + (i * j) + "&nbsp;&nbsp;");
+				}
+				document.write("<br>");
+			}
+
+			// 5. 求1-100之间个位数不为3的数的累加和
+			var sum2 = 0;
+			for (var i = 1; i <= 100; i++) {
+				if (i % 10 != 3) {
+					sum2 += i;
+				}
+			}
+			console.log("1-100之间个位数不为3的数的累加和"+sum2);
+
+			// 7.反转数组
+			var arr1 = [1, 2, 3, 4, 5, 6]
+			console.log("反转之前" + arr1);
+			// 第一种写法
+            //i代表数组中第0号元素，j代表数组中的最后一个元素，每比较一次i++，j--
+            // for(var i=0,j=arr1.length-1;i<arr1.length,i<=j;i++,j--){
+            //     //交换位置
+            //     var temp = arr1[i];
+            //     arr1[i] = arr1[j];
+            //     arr1[j] = temp;
+            // }
+
+            // 第二种写法
+           /* for (var i = 0; i < arr1.length / 2; i++) {//总共比较了数组长度/2次
+                //使用第三方变量交换位置
+				var temp = arr1[i];
+				arr1[i] = arr1[arr1.length - i - 1];//arr1[0]  arr1[arr1.length-1-0]
+				arr1[arr1.length - i - 1] = temp;//   arr1[1]  arr1[arr1.length-1-1]
+			}
+			console.log("反转之后" + arr1);*/
+
+            //第三种写法
+			console.log("======================");
+			for (var i = 0; i < arr1.length ; i++) {
+				for (var j = 0; j < i; j++) {
+					var temp=arr1[i];
+					arr1[i]=arr1[j];
+					arr1[j]=temp;
+				}
+			}
+			console.log(arr1);
+
+			// 8.数组去重
+			var arr2 = [10, 20, 10, 30, 40, 50, 30];
+			var arr3 = [];
+			for (var i = 0; i < arr2.length; i++) {//遍历原数组
+			    var flag=true;//默认不重复，每次循环结束让他重新默认为不重复
+                for(var j=0;j<arr3.length;j++){//遍历新数组
+                    if(arr2[i]==arr3[j]){
+                        flag=false;
+                    }
+                }
+                //如果为true就存到新数组里面去
+                if(flag){
+                    arr3[j]=arr2[i];
+                }
+			}
+			console.log(arr3);
+
+			//9.判断是否为对称数组
+			var arr4=[1,2,3,2,1];
+			var bool=0;
+			for(var i=0;i<arr4.length/2;i++){
+				if(arr4[i]==arr4[arr4.length-1-i]){
+					bool=1;
+				}else {
+					bool=0;
+				}
+			}
+			if(bool){
+				console.log("是对称数组");
+			}else {
+				console.log("不是对称数组");
+			}
+
+			// 10.数组的排序
+			var arr5 = [5, 1, 2, 3, 9, 6, 0];
+            console.log("排序前的数组");
+            console.log(arr5);
+            for (var i = 0; i < arr5.length; i++) {
+                for (var j = i+1; j < arr5.length; j++) {
+                    if (arr5[i] > arr5[j]) {
+                        var temp = arr5[i];
+                        arr5[i] = arr5[j];
+                        arr5[j] = temp;
+                    }
+                }
+            }
+
+			// for (var i = 0; i < arr5.length - 1; i++) {
+			// 	for (var j = 0; j < arr5.length - i - 1; j++) {
+			// 		if (arr5[j] > arr5[j + 1]) {
+			// 			var temp = arr5[j];
+			// 			arr5[j] = arr5[j + 1];
+			// 			arr5[j + 1] = temp;
+			// 		}
+			// 	}
+			// }
+			console.log("排序后的数组");
+			console.log(arr5);
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function randomInt(num=256) {
+            return Math.floor(Math.random()*num);
+        }
+        function rgbRandom() {
+            var r =randomInt();
+            var g =randomInt();
+            var b =randomInt();
+            return  'rgb('+r+','+g+','+b+')';
+        }
+        var rgb=rgbRandom()
+        console.log(rgb)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function formatDate() {
+        var myDate=new Date();
+        var yy = myDate.getFullYear();
+        var mm = myDate.getMonth()+1;
+        var dd = myDate.getDate();
+        return  yy+'-'+mm+'-'+dd;
+        }
+        var day=formatDate();
+        document.write(day);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

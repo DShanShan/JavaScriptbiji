@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr1=['♥','♦','♠','♣'];
+        var arr2=['A','J','Q','K','2','3','4','5','6','7','8','9','10'];
+        var arr3=[];
+        for (var i=0;i<arr1.length;i++){
+            for (var j=0;j<arr2.length;j++){
+                var str=arr1[i]+arr2[j];
+                arr3[arr3.length]=str;
+            }
+        }
+        arr3[arr3.length]='🃏';
+        arr3[arr3.length]='🃏';
+        console.log(arr3);
+        function pai(arr) {
+            for (var i=0;i<arr.length;i++) {
+                var num = Math.floor(Math.random() * arr.length);
+                    var temp=arr[i];
+                    arr[i]=arr[num];
+                    arr[num]=temp;
+            }
+            return arr;
+        }
+        var pai1 = pai(arr3);
+        console.log(pai1);
+        var peop1=[];
+        var peop2=[];
+        var peop3=[];
+        var sx=[];
+        for (var i=0;i<pai1.length;i++){
+            if (i<pai1.length-3){
+                if(i%3===0) {
+                    peop1[peop1.length] = pai1[i];
+                }else if(i%3===1){
+                    peop2[peop2.length] = pai1[i];
+                }else if(i%3===2) {
+                    peop3[peop3.length] = pai1[i];
+                }
+            }else {
+                sx[sx.length] = pai1[i];
+            }
+        }
+        document.write("玩家1："+peop1);
+        document.write("<br>");
+        document.write("玩家2："+peop2);
+        document.write("<br>");
+        document.write("玩家3："+peop3);
+        document.write("<br>");
+        document.write("底牌："+sx);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

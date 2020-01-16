@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 27)	写一个升序的冒泡排序
+        var arr=[6,3,8,2,0,9,1];
+        document.write("排序之前的数组"+arr);
+        for (var i=0;i<arr.length;i++){
+            for (var j=0;j<arr.length-1-i;j++){
+                if (arr[j]>arr[j+1]){
+                    var temp=arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        document.write("<br>");
+        document.write("排序之后的数组"+arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

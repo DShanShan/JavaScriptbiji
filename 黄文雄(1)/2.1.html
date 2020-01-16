@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fz() {
+            var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+            var randomInt = Math.floor(Math.random()*arr.length);
+
+            return arr[randomInt];
+        }
+        function fp() {
+            var one=fz();
+            var two=fz();
+            var three=fz();
+            var four=fz();
+            return  '第一位：'+one+'<br>第二位：'+two+'<br>第三位：'+three+'<br>第四位：'+four;
+        }
+        document.write(fp())
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

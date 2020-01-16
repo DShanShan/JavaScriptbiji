@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 28)	5道单选题，标准答案为：[ADBCD]。四名同学分别输入答案，答对一题2分，
+        // 判断每位同学获得几分，总分10分
+
+        var arr=['A','D','B','C','D'];
+        document.write("正确答案为"+arr);
+        document.write("<br>");
+        for (var i=1;i<=4;i++){
+            var student=prompt("第"+i+"名同学输入答案");
+            var student2=student.toUpperCase();
+            if (student2.length===5){
+                var num=0;
+                for (var j=0;j<arr.length;j++){
+                    if(student2[j]===arr[j]){
+                        num+=2;
+                    }
+                }
+                document.write("第"+i+"学生的分数为"+num);
+                document.write("<br>");
+            }else {
+                alert("输入有误,请重新输入");
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

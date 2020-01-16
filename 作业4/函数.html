@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1. 生成 n ~ m 的随机数
+        function random(n,m) {
+            var str=Math.floor(Math.random()*m)+n;
+            return str;
+        }
+        var rand = random(1,5);
+        console.log("生成 n ~ m 的随机数"+rand);
+
+        //2. rgb 随机颜色封装
+        function randomInt(m=256) {
+            return Math.floor(Math.random()*m);
+        }
+        function randomRGBColor() {
+            var r=randomInt();
+            var g=randomInt();
+            var b=randomInt();
+            return "rgb("+r+","+g+","+b+")";
+        }
+
+        var color = randomRGBColor();
+        console.log("rgb 随机颜色"+color);
+
+        // 3.16进制随机颜色
+        function randomHexColor() {
+            var str="#";
+            var arr=["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+            for (var i=1;i<=6;i++){
+                str+=arr[Math.floor(Math.random()*arr.length)];
+            }
+            return str;
+        }
+        var jingZhi = randomHexColor();
+        console.log("16进制随机颜色"+jingZhi);
+
+        // 4.日期格式化封装
+        function formatDate() {
+            var myDate=new Date();
+            var year = myDate.getFullYear();
+            var month = myDate.getMonth()+1;
+            var date = myDate.getDate();
+            return year+"-"+month+"-"+date;
+        }
+        var time1 = formatDate();
+        console.log("当前日期"+time1);
+
+        // 5.时间格式化封装
+        function formatTime() {
+            var myDate=new Date();
+            var hours = myDate.getHours();
+            var minutes = myDate.getMinutes();
+            var seconds = myDate.getSeconds();
+            return hours+":"+minutes+":"+seconds;
+        }
+        var time2 = formatTime();
+        console.log("当前时间为"+time2);
+
+        //6. 小于 10 补 0
+        function zero(num) {
+            var x="0";
+            if(num<10){
+                x+=num;
+                return x;
+            }else if(num>=10){
+                return num;
+            }
+        }
+        var zero1 = zero(4);
+        console.log("小于 10 补 0");
+        console.log(zero1);
+
+        // 7.① 获取系统时间，根据获取的星期数据，在页面中输出"今天是星期几"，(如：今天是星期六）
+        function date() {
+            var myDate=new Date();
+            var dd = myDate.getDate();
+            return dd;
+        }
+        var xq = date();
+        if(xq%7==1){
+            console.log("今天是星期一");
+        }else if(xq%7==2){
+            console.log("今天是星期二");
+        }else if(xq%7==3){
+            console.log("今天是星期三");
+        }else if(xq%7==4){
+            console.log("今天是星期四");
+        }else if(xq%7==5){
+            console.log("今天是星期五");
+        }else if(xq%7==6){
+            console.log("今天是星期六");
+        }else if(xq%7==0){
+            console.log("今天是星期天");
+        }
+
+        // 7.② 准备一个数组，存放组员名字，在调用函数的时候可以随机点名
+        var arr2=['蔡青蓝','邓姗姗','房政','黄文雄','胡毅','侯艳杰','简俊文','李桥坚','梁志鸿','文豪','文豪','梁德柱','辛振基','曹聪','罗苑浩'];
+        console.log(arr2);
+        
+		// var str2 = Math.floor(Math.random()*arr2.length);
+        // console.log("随机点名"+arr2[str2]);
+		
+		function names(arr){
+			var str2 = Math.floor(Math.random()*arr.length);
+			return arr[str2];
+		}
+		var names=names(arr2);
+		console.log("随机点名"+names);
+		
+		//7.③准备一个数组，翻转数组数据，如 [1,2,3,4] 翻转后变成 [4,3,2,1]。
+		function reverseArray(arr) {
+			//数组比较轮数
+			for (var i = 0; i < arr.length / 2; i++) {
+				var temp = arr[i];
+				arr[i] = arr[arr.length - 1 - i];
+				arr[arr.length - 1 - i] = temp;
+			}
+			return arr;
+		}
+		
+		var arr3=[2,5,1,0,4,7,3];
+		console.log("反转前的数组");
+		console.log(arr3);
+		var array=reverseArray(arr3);
+		console.log("反转后的数组");
+		console.log(array);
+		
+		//7.④准备一个数组，求数组中的最大值，如 [1,2,3,4] 的最大值为 4。
+		function max(arr){
+			var max = arr[0];
+			for (var i = 0; i < arr.length; i++) {
+				//最大值
+				if (max < arr[i]) {
+					max = arr[i];
+				} 
+			} 
+			return max;
+		}
+		
+		var arr4=[2,5,1,0,4,7,3];
+		console.log("数组中的元素");
+		console.log(arr4);
+		var max=max(arr4);
+		console.log("数组中的最大值为"+max);
+		
+		
+		//7.⑤准备一个数组，求数组中的最小值，如 [1,2,3,4] 的最小值为 1。
+		function min(arr){
+			var min = arr[0];
+			for (var i = 0; i < arr.length; i++) {
+				//最大值
+				if (min > arr[i]) {
+					min = arr[i];
+				} 
+			} 
+			return min;
+		}
+		
+		var arr5=[2,5,1,0,4,7,3];
+		console.log("数组中的元素");
+		console.log(arr5);
+		var min=min(arr5);
+		console.log("数组中的最小值为"+min);
+		
+		//8.冒泡排序
+		var arr6=[5,2,3,1,4];
+		console.log("排序前的数组"+arr6);
+		function sorting(arr){
+			//轮数
+			for(var i=0;i<arr.length;i++){
+				//控制的是两个比较的数
+				for(var j=0;j<arr.length-1-i;j++){
+					if(arr[j]>arr[j+1]){//如果大于就使用第三方变量交换位置
+						var temp=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=temp;
+					}
+				}
+			}
+			return arr;
+		}
+		
+		console.log("排序后的数组"+sorting(arr6));
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

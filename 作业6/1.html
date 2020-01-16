@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 把下面数组的首尾两个元素互换
+        var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+        console.log("互换前的数组"+arr);
+        var str1 = arr.slice(0,1);
+        var str2 = arr.slice(arr.length-1);
+        arr.splice(0,1,str2.join(""));
+        arr.splice(arr.length-1,1,str1.join(""));
+        console.log("互换后的数组"+arr);
+
+
+        // 传入用中杆分隔的字符串，调用函数后生成驼峰命名法的字符串。
+        function toCamelCase(str) {
+            var arr=str.split('-');
+            for (var i=1;i<arr.length;i++){
+                arr[i]=arr[i][0].toUpperCase()+arr[i].slice(1);
+            }
+            var s = arr.join("");
+            return s;
+        }
+        var str='get-element-by-id';
+        console.log("用中杆分隔的字符串");
+        console.log(str);
+        var camelCase = toCamelCase(str);
+        console.log("生成驼峰命名法的字符串");
+        console.log(camelCase);
+
+
+        // 从以下学员名单中随机选出4个学员：
+        var arr2 = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+        var arr3=[];
+        for (var i=0;i<arr2.length;i++){
+            var flag=true;
+            var number = Math.floor(Math.random()*arr2.length);
+            for (var j=0;j<arr3.length;j++){
+                if(arr3[j]===arr2[number]){
+                    flag=false;
+                }
+
+            }
+                if (flag) {
+                    if(arr3.length<4){
+                        arr3[arr3.length] = arr2[number];
+                    }
+                }
+        }
+        console.log("随机选出4个学员");
+        console.log(arr3);
+
+
+
+        // 对以下学员随机排序，生成一个新数组：
+        var arr4 = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+        var arr5=[];
+        for (var i=0;i<arr4.length;i++){
+            var flag2=true;
+            var number2 = Math.floor(Math.random()*arr2.length);
+            for (var j=0;j<arr5.length;j++){
+                if(arr5[j]===arr4[number2]){
+                    flag2=false;
+                }
+
+            }
+            if (flag2) {
+                arr5[arr5.length] = arr4[number2];
+            }
+        }
+        console.log("随机生成的新数组");
+        console.log(arr5);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

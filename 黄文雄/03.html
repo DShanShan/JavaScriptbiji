@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr=[1,2,3,4];
+        document.write(arr);
+        for (var s=0,y=arr.length-1;s<=y;s++,y--){
+            var temp=arr[s];
+            arr[s]=arr[y];
+            arr[y]=temp;
+        }
+        document.write('<br>');
+        document.write(arr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+        for (var x=0;x<arr.length;x++){
+            var Random=parseInt(Math.random()*arr.length);
+            var temp=arr[Random];
+            arr[Random]=arr[x];
+            arr[x]=temp;
+        }
+        document.write(arr)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

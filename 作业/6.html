@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var num1=1;
+			var num2=0;
+			var sum1=0;
+			var sum2=0;
+            var sum3=0;
+			var money=100;
+			while(num1!=4){
+				var str = +prompt('输入您要的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出\n5.当前时间\n6.笑话');
+				if(str==1){
+					var num2=+prompt("请输入您要存的金额:");
+					sum1=money+num2;
+					alert("您的余额是:"+sum1+"元");
+				}else if(str==2){
+					var num3=+prompt("请输入您要取出的金额:");
+					sum2=money+num2-num3;
+					alert("您的余额是:"+sum2+"元")
+				}else if(str==3){
+				    sum3=money;
+					alert("您的余额是:"+sum3+"元")
+				}else if(str==4){
+					break;
+				}else if(str==5){
+				    var myDate=new Date();
+				    var yy = myDate.getFullYear();
+                    var mm = myDate.getMonth()+1;
+                    var dd = myDate.getDate();
+				    alert(yy+"-"+mm+"-"+dd);
+				}else if(str==6){
+				    var arr=["为什么蚕宝宝很有钱？","为什么小白兔不嫁给斑马呢？","什么时候可以统一？","猴子不喜欢什么线？"];
+				        var num = Math.floor(Math.random()*arr.length);
+				        alert(arr[num]);
+				}else {
+					alert("输入有误");
+				}
+			}
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
